@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOXCARS - Compra y venta de vehículos</title>
+    
+    <!-- Bootstrap's CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- Font's Awesome -->
+    <script src="https://kit.fontawesome.com/525336de52.js" crossorigin="anonymous"></script>
+
+    <!-- Swiper JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Icon -->
+    <link rel="icon" type="image/x-icon" href="icons/car-icon-car-icon-white-background-illustration_995545-84.avif">
+
+    <!-- Personal styles/scripts -->
+    <link rel="stylesheet" href="css/media-queries.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <!-- <link rel="stylesheet" href="css/styles.css"> -->
+    <script src="js/navbarAnimation.js"></script>
+    
+
+</head>
+<body style="font-family: poppins, sans-serif;">
+    <section>
+        <div class="position-relative">
+            <img class="d-none d-sm-block vw-100 vh-100 object-fit-cover img-fluid" src="img/audi_r8_velgen.jpg" alt="auto" style="width: 100%; opacity: 90%;">
+            <img class="d-sm-none vw-100 vh-100 object-fit-cover" src="img/audi_r8_velgen_sm.jpg" alt="auto_sm" style="opacity: 90%;">
+            <div class="container position-absolute top-0 z-2">
+                <nav class="navbar navbar-expand-lg bg-transparent fixed-top">
+                    <div class="container">
+                      <a class="navbar-brand text-light text-uppercase fw-semibold" href="#">boxcars</a>
+                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                      <div class="collapse navbar-collapse rounded-3" id="navbarText">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                          <li class="nav-item link-light">
+                            <a class="nav-link active responsive-text link-light text-capitalize" aria-current="page" href="#">inicio</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link responsive-text link-light text-capitalize" href="#marcas">marcas</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link responsive-text link-light text-capitalize" href="#vehiculos">vehículos</a>
+                          </li>
+                        </ul>
+                        <div class="d-none d-lg-flex align-items-center gap-3 navbar-text">
+                            <span class="responsive-text text-capitalize text-light">
+                                Social media
+                            </span>
+                            <a href="#"><i class="fa-brands fa-facebook" style="color: #fff;"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram" style="color: #fff;"></i></a>
+                            <a href="#"><i class="fa-brands fa-x-twitter" style="color: #fff;"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="position-absolute top-50 start-50 translate-middle text-center text-light z-1">
+                <span class="responsive-text fw-semibold">Encuentra el auto que necesites</span>
+                <h2 class="fs-1 text-capitalize fw-semibold">encuentra tu auto perfecto</h2>
+                <form class="d-none d-md-block">
+                    <div class="d-md-flex gap-2">
+                        <input class="text-center responsive-text" type="text" placeholder="Alguna marca" required>
+                        <span class="fw-bold">+</span>
+                        <input class="text-center responsive-text" type="text" placeholder="Algún modelo" required>
+                        <span class="fw-bold">+</span>
+                        <input class="text-center responsive-text" type="text" placeholder="Tu Precio" required>
+                    </div>
+                    <button type="submit" class="mt-2 px-5 bg-dark rounded-pill text-white fw-medium opa">
+                        <i class="fa-solid fa-magnifying-glass fa-xs"></i>
+                        <span class="text-capitalize responsive-text">buscar autos</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <main class="container mt-4 p-3">
+        <section id="marcas">
+            <div class="mb-4 d-md-flex justify-content-between align-items-center">
+                <h3 class="text-capitalize">explora todas nuestras marcas</h3>
+                <a href="#" class="link-underline link-underline-opacity-0">
+                    <span class="mx-2">Mostrar todas las marcas</span>
+                    <i class="fa-solid fa-link"></i>
+                </a>
+            </div>
+            <div class="container mx-auto row gap-5 justify-content-center justify-content-md-between">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 border border-2 border-secondary-subtle rounded-2">
+                    <figure class="h-25">
+                        <img class="mw-100" src="img/audi.jpg" alt="audi">
+                        <figcaption class="mt-3 text-center fw-medium text-capitalize">audi</figcaption>
+                    </figure>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 border border-2 border-secondary-subtle rounded-2">
+                    <figure class="h-25">
+                        <img class="mw-100" src="img/bmw.png" alt="audi">
+                        <figcaption class="mt-3 text-center fw-medium text-uppercase">bmw</figcaption>
+                    </figure>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 border border-2 border-secondary-subtle rounded-2">
+                    <figure class="h-25">
+                        <img class="mw-100" src="img/ford.svg" alt="audi">
+                        <figcaption class="mt-3 text-center fw-medium text-capitalize">ford</figcaption>
+                    </figure>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 border border-2 border-secondary-subtle rounded-2">
+                    <figure class="h-25">
+                        <img class="mw-100" src="img/mercedes.png" alt="audi">
+                        <figcaption class="mt-3 text-center fw-medium text-capitalize">mercedes benz</figcaption>
+                    </figure>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 border border-2 border-secondary-subtle rounded-2">
+                    <figure class="h-25">
+                        <img class="mw-100" src="img/peugeot.jpg" alt="audi">
+                        <figcaption class="mt-3 text-center fw-medium text-capitalize">peugeot</figcaption>
+                    </figure>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 border border-2 border-secondary-subtle rounded-2">
+                    <figure class="h-25">
+                        <img class="mw-100" src="img/Volkswagen.png" alt="audi">
+                        <figcaption class="mt-3 text-center fw-medium text-capitalize">volkswagen</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+        
+        <section id="vehiculos" class="mt-5 container">
+            <h3 class="mb-4 text-capitalize">explora todos nuestros vehiculos</h3>
+            <div class="mb-2 container d-flex justify-content-end gap-1">
+                <button class="swiper-button-prev-custom rounded-circle bg-dark">
+                    <i class="fa-solid fa-arrow-left" style="color:#fff"></i>
+                </button>
+                <button class="swiper-button-next-custom rounded-circle bg-dark">
+                    <i class="fa-solid fa-arrow-right" style="color:#fff"></i>
+                </button>
+            </div>
+            <div class="swiper mySwiper container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="ratio ratio-16x9">
+                            <img src="img/a8.jpg" class="img-fluid rounded-top-3" alt="Audi A8">
+                        </div>
+                        <article class="px-4 py-2 rounded-bottom-3 bg-body-secondary">
+                            <h4 class="fs-5 text-capitalize">Audi A8</h4>
+                            <p class="responsive-text text-capitalize">Sedán de lujo con tracción quattro y motor V6 de 335 hp. Alta tecnología y confort.</p>
+                            <div class="mt-4 row responsive-text">
+                                <div class="col">
+                                    <div class="d-flex justify-content-center">
+                                        <i class="fa-solid fa-gauge fa-lg"></i>
+                                    </div>
+                                    <span class="d-block text-center mt-3">250 km/h</span>
+                                </div>
+                                <div class="col">
+                                    <div class="d-flex justify-content-center">
+                                        <i class="fa-solid fa-gas-pump fa-lg"></i>
+                                    </div>
+                                    <span class="d-block text-center mt-3">Gasolina</span>
+                                </div>
+                                <div class="col">
+                                    <div class="d-flex justify-content-center">
+                                        <i class="fa-solid fa-toolbox fa-lg"></i>
+                                    </div>
+                                    <span class="d-block text-center mt-3">Automático</span>
+                                </div>
+                            </div>
+                            <div class="mt-4 d-flex justify-content-between align-items-center">
+                                <span class="fs-4 fw-semibold">$100,000</span>
+                                <a href="#" class="link-underline link-underline-opacity-0">
+                                    <span class="mx-2">Detalles</span>
+                                    <i class="fa-solid fa-link"></i>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="ratio ratio-16x9">
+                            <img src="img/bmw-2-series-coupe.jpg" class="img-fluid rounded-top-3" alt="BMW 2 Series Coupe">
+                        </div>
+                        <article class="px-4 py-2 rounded-bottom-3 bg-body-secondary">
+                            <h4 class="fs-5 text-capitalize">BMW 2 Series Coupe</h4>
+                            <p class="responsive-text text-capitalize">Deportivo con motor turbo de 255 hp, perfecto para entusiastas de la velocidad.</p>
+                            <div class="mt-4 row responsive-text">
+                                <div class="col">
+                                    <div class="d-flex justify-content-center">
+                                        <i class="fa-solid fa-gauge fa-lg"></i>
+                                    </div>
+                                    <span class="d-block text-center mt-3">240 km/h</span>
+                                </div>
+                                <div class="col">
+                                    <div class="d-flex justify-content-center">
+                                        <i class="fa-solid fa-gas-pump fa-lg"></i>
+                                    </div>
+                                    <span class="d-block text-center mt-3">Gasolina</span>
+                                </div>
+                                <div class="col">
+                                    <div class="d-flex justify-content-center">
+                                        <i class="fa-solid fa-toolbox fa-lg"></i>
+                                    </div>
+                                    <span class="d-block text-center mt-3">Automático</span>
+                                </div>
+                            </div>
+                            <div class="mt-4 d-flex justify-content-between align-items-center">
+                                <span class="fs-4 fw-semibold">$45,000</span>
+                                <a href="#" class="link-underline link-underline-opacity-0">
+                                    <span class="mx-2">Detalles</span>
+                                    <i class="fa-solid fa-link"></i>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="ratio ratio-16x9">
+                            <img src="img/ford-og-ranger-raptor.avif" class="img-fluid rounded-top-3" alt="Ford Ranger Raptor">
+                        </div>
+                        <article class="px-4 py-2 rounded-bottom-3 bg-body-secondary">
+                            <h4 class="fs-5 text-capitalize">Ford Ranger Raptor</h4>
+                            <p class="responsive-text text-capitalize">Camioneta todoterreno con motor biturbo diésel de 213 hp, para terrenos difíciles.</p>
+                            <div class="mt-4 row responsive-text">
+                                <div class="col">
+                                    <div class="d-flex justify-content-center">
+                                        <i class="fa-solid fa-gauge fa-lg"></i>
+                                    </div>
+                                    <span class="d-block text-center mt-3">170 km/h</span>
+                                </div>
+                                <div class="col">
+                                    <div class="d-flex justify-content-center">
+                                        <i class="fa-solid fa-gas-pump fa-lg"></i>
+                                    </div>
+                                    <span class="d-block text-center mt-3">Diesel</span>
+                                </div>
+                                <div class="col">
+                                    <div class="d-flex justify-content-center">
+                                        <i class="fa-solid fa-toolbox fa-lg"></i>
+                                    </div>
+                                    <span class="d-block text-center mt-3">Automático</span>
+                                </div>
+                            </div>
+                            <div class="mt-4 d-flex justify-content-between align-items-center">
+                                <span class="fs-4 fw-semibold">$55,000</span>
+                                <a href="#" class="link-underline link-underline-opacity-0">
+                                    <span class="mx-2">Detalles</span>
+                                    <i class="fa-solid fa-link"></i>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="ratio ratio-16x9">
+                            <img src="img/mercedess.jpeg" class="img-fluid rounded-top-3" alt="Mercedes-Benz Clase C">
+                        </div>
+                        <article class="px-4 py-2 rounded-bottom-3 bg-body-secondary">
+                            <h4 class="fs-5 text-capitalize">Mercedes-Benz Clase C</h4>
+                            <p class="responsive-text text-capitalize">Lujo y rendimiento con motor turbo de 255 hp, ideal para quienes buscan elegancia.</p>
+                            <div class="mt-4 row responsive-text">
+                                <div class="col">
+                                    <div class="d-flex justify-content-center">
+                                        <i class="fa-solid fa-gauge fa-lg"></i>
+                                    </div>
+                                    <span class="d-block text-center mt-3">250 km/h</span>
+                                </div>
+                                <div class="col">
+                                    <div class="d-flex justify-content-center">
+                                        <i class="fa-solid fa-gas-pump fa-lg"></i>
+                                    </div>
+                                    <span class="d-block text-center mt-3">Gasolina</span>
+                                </div>
+                                <div class="col">
+                                    <div class="d-flex justify-content-center">
+                                        <i class="fa-solid fa-toolbox fa-lg"></i>
+                                    </div>
+                                    <span class="d-block text-center mt-3">Automático</span>
+                                </div>
+                            </div>
+                            <div class="mt-4 d-flex justify-content-between align-items-center">
+                                <span class="fs-4 fw-semibold">$60,000</span>
+                                <a href="#" class="link-underline link-underline-opacity-0">
+                                    <span class="mx-2">Detalles</span>
+                                    <i class="fa-solid fa-link"></i>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="ratio ratio-16x9">
+                            <img src="img/Peugeot Deportivo.jpeg" class="img-fluid rounded-top-3" alt="Peugeot 508 Sport Engineered">
+                        </div>
+                        <article class="px-4 py-2 rounded-bottom-3 bg-body-secondary">
+                            <h4 class="fs-5 text-capitalize">Peugeot 508 Sport</h4>
+                            <p class="responsive-text text-capitalize">Híbrido enchufable de 360 hp, ofrece rendimiento dinámico con bajas emisiones.</p>
+                            <div class="mt-4 row responsive-text">
+                                <div class="col">
+                                    <div class="d-flex justify-content-center">
+                                        <i class="fa-solid fa-gauge fa-lg"></i>
+                                    </div>
+                                    <span class="d-block text-center mt-3">250 km/h</span>
+                                </div>
+                                <div class="col">
+                                    <div class="d-flex justify-content-center">
+                                        <i class="fa-solid fa-gas-pump fa-lg"></i>
+                                    </div>
+                                    <span class="d-block text-center mt-3">Híbrido</span>
+                                </div>
+                                <div class="col">
+                                    <div class="d-flex justify-content-center">
+                                        <i class="fa-solid fa-toolbox fa-lg"></i>
+                                    </div>
+                                    <span class="d-block text-center mt-3">Automático</span>
+                                </div>
+                            </div>
+                            <div class="mt-4 d-flex justify-content-between align-items-center">
+                                <span class="fs-4 fw-semibold">$70,000</span>
+                                <a href="#" class="link-underline link-underline-opacity-0">
+                                    <span class="mx-2">Detalles</span>
+                                    <i class="fa-solid fa-link"></i>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="ratio ratio-16x9">
+                            <img src="img/vocho.jpeg" class="img-fluid rounded-top-3" alt="Volkswagen Beetle">
+                        </div>
+                        <article class="px-4 py-2 rounded-bottom-3 bg-body-secondary">
+                            <h4 class="fs-5 text-capitalize">Volkswagen Beetle</h4>
+                            <p class="responsive-text text-capitalize">Clásico icónico con motor de 1.6 litros, para quienes buscan un coche con historia.</p>
+                            <div class="mt-4 row responsive-text">
+                                <div class="col">
+                                    <div class="d-flex justify-content-center">
+                                        <i class="fa-solid fa-gauge fa-lg"></i>
+                                    </div>
+                                    <span class="d-block text-center mt-3">140 km/h</span>
+                                </div>
+                                <div class="col">
+                                    <div class="d-flex justify-content-center">
+                                        <i class="fa-solid fa-gas-pump fa-lg"></i>
+                                    </div>
+                                    <span class="d-block text-center mt-3">Gasolina</span>
+                                </div>
+                                <div class="col">
+                                    <div class="d-flex justify-content-center">
+                                        <i class="fa-solid fa-toolbox fa-lg"></i>
+                                    </div>
+                                    <span class="d-block text-center mt-3">Manual</span>
+                                </div>
+                            </div>
+                            <div class="mt-4 d-flex justify-content-between align-items-center">
+                                <span class="fs-4 fw-semibold">$20,000</span>
+                                <a href="#" class="link-underline link-underline-opacity-0">
+                                    <span class="mx-2">Detalles</span>
+                                    <i class="fa-solid fa-link"></i>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+    <section class="container mt-4 mb-0 p-3">
+        <div class="row">
+            <div class="col-12 col-lg-6">
+                <div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/lT5rSXtDZwIM" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed object-fit-cover" allowFullScreen></iframe></div><p><a class="visually-hidden" href="https://giphy.com/gifs/snow-clean-toyota-lT5rSXtDZwIM">via GIPHY</a></p>
+            </div>
+            <div class="col-12 col-lg-6">
+                <h5 class="fs-3 text-capitalize">obtenga un precio justo por su automóvil, véndanoslo hoy</h5>
+                <p class="responsive-text">En <a class="fw-semibold" href="#">BOXCARS</a>, nos especializamos en facilitar la venta de tu vehículo de manera rápida, segura y conveniente.</p>
+                <ul class="list-unstyled responsive-text">
+                    <li class="d-flex align-items-baseline gap-3">
+                        <i class="fa-solid fa-check"></i>
+                        <p>Evaluación Rápida y Justa: Nuestros expertos realizarán una evaluación exhaustiva de tu vehículo y te ofrecerán una cotización justa basada en el valor real de mercado.</p>
+                    </li>
+                    <li class="d-flex align-items-baseline gap-3">
+                        <i class="fa-solid fa-check"></i>
+                        <p>Pago Inmediato: Una vez que aceptes nuestra oferta, recibirás el pago de inmediato. Olvídate de los largos periodos de espera.</p>
+                    </li>
+                    <li class="d-flex align-items-baseline gap-3">
+                        <i class="fa-solid fa-check"></i>
+                        <p>Mínimo Esfuerzo: Nos encargamos de todo el papeleo y los trámites necesarios, para que tú solo tengas que preocuparte por disfrutar tu dinero.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center text-lg-start bg-body-tertiary text-muted">
+
+        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+            <div class="me-5 d-none d-lg-block">
+                <span>Social Media:</span>
+            </div>
+
+            <div>
+                <a href="#" class="me-3 link-underline link-underline-opacity-0 text-reset">
+                    <i class="fa-brands fa-square-facebook"></i>
+                </a>
+                <a href="#" class="me-3 link-underline link-underline-opacity-0 text-reset">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="me-3 link-underline link-underline-opacity-0 text-reset">
+                    <i class="fab fa-google"></i>
+                </a>
+                <a href="#" class="me-3 link-underline link-underline-opacity-0 text-reset">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </section>
+    
+        <section class="mb-2">
+            <div class="container text-center text-md-start mt-5">
+                <div class="row mt-3">
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            <i class="fas fa-gem me-3"></i>BOXCARS
+                        </h6>
+                        <p>
+                            Encuentra el auto que necesitas, encuentra tu auto perfecto.
+                        </p>
+                    </div>
+
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">Contacto</h6>
+                        <p><i class="fas fa-home me-3"></i>Trujillo</p>
+                        <p>
+                            <i class="fas fa-envelope me-3"></i>
+                            zaval@example.com
+                        </p>
+                        <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <div class="bg-body-secondary text-center p-4">
+            © 2021 Copyright:
+            <a class="me-3 link-underline link-underline-opacity-0 text-reset fw-bold" href="https://mdbootstrap.com/">BOXCARS.com</a>
+        </div>
+    </footer>
+    <script src="js/carousel.js"></script>
+</body>
+</html>

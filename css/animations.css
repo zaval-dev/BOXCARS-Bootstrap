@@ -1,0 +1,12 @@
+html {
+    scroll-padding: 48px;
+}
+.navbar {
+    transition: background-color 0.3s ease;
+}
+.navbar-toggler {
+    transition: background-color 0.3s ease;
+}
+.navbar.scrolled {
+    background-color: #212529;
+}
